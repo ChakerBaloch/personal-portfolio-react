@@ -1,12 +1,12 @@
 
 import './App.css';
-import AnimatedTabs from './components/AnimatedTabs';
+import HomePage from './components/HomePage';
 
 
 function App() {
   return (
-    <div className="bg-gray-100">
-      <AnimatedTabs />
+    <div>
+      <HomePage />
     </div>
   );
   
