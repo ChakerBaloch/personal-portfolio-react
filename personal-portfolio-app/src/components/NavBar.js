@@ -13,6 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { CenterFocusStrong } from '@mui/icons-material';
 
 
 const pages = ['Home', 'About', 'Projects','Contact'];
@@ -41,14 +42,21 @@ function NavBar() {
     <AppBar position="static" sx={{backgroundColor:'#9747FF'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+        <Box sx={{flexGrow: 0}}>
+          <Box sx={{flexGrow: 1, display: 'flex', alignItems: 'center'}}>
+            <Tooltip>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 2 }}>
               <Avatar alt="Chaker Baloch" src={chakerImage} />
-
               </IconButton>
+              
             </Tooltip>
-            <Menu
+              <Tooltip>
+                <Typography variant="body1" textAlign="center">
+                  Chaker Baloch
+                </Typography>
+              </Tooltip>
+          </Box>
+            {/* <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -69,10 +77,10 @@ function NavBar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}, justifyContent: 'flex-end' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -106,9 +114,9 @@ function NavBar() {
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> 
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -126,7 +134,7 @@ function NavBar() {
             }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
