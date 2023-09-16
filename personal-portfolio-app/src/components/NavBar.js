@@ -45,10 +45,10 @@ function NavBar() {
                 <Typography variant="body1" textAlign="center"
                  sx={{
                     flexGrow: 1,
-                    display: 'block',
                     my: '2',
                     fontSize: '20px',
-                    color: 'inherit'
+                    color: 'inherit',
+                    whiteSpace: 'nowrap'
                 }}>
                   CHAKER BALOCH
                 </Typography>
@@ -94,7 +94,7 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', paddingLeft:'33%' }}>
-            {pages.map((page, index) => (
+            {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
