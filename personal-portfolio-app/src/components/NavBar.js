@@ -12,8 +12,14 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { CenterFocusStrong } from '@mui/icons-material';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { Block } from '@mui/icons-material';
+
+
+
 
 
 const pages = ['Home', 'About', 'Projects','Contact'];
@@ -31,6 +37,7 @@ function NavBar() {
   };
 
   return (
+  <div>
     <AppBar position="static" sx={{backgroundColor:'#9747FF'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -110,6 +117,26 @@ function NavBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    
+    {/* Text contetns */}
+    <Box sx={{ width: '100%',
+     flexGrow: 1,
+     my: 25,
+     lineHeight:'normal',
+     display:{xs: 'none', md: 'flex'},
+     flexDirection: 'column',
+     justifyContent: 'center', 
+     alignItems: 'center'
+     }}>
+      <Typography variant="h4" gutterBottom>
+      Hi, I am Chaker Baloch 
+      </Typography>
+      <Typography variant="h5" gutterBottom>
+      I am a full stack developer with experience both working<br /> in front end and back end projects. 
+      </Typography>
+    </Box>
+  </div>
+
   );
 }
 export default NavBar;
