@@ -37,7 +37,7 @@ function NavBar() {
   };
 
   return (
-  <div>
+  <div style={{backgroundColor: '#E9E8E8', width: '100%', height: '100vh'}}>
     <AppBar position="static" sx={{backgroundColor:'#9747FF'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -121,19 +121,22 @@ function NavBar() {
     {/* Text contetns */}
     <Box sx={{ width: '100%',
      flexGrow: 1,
-     my: 25,
+     my: 20,
      lineHeight:'normal',
      display:{xs: 'none', md: 'flex'},
      flexDirection: 'column',
      justifyContent: 'center', 
-     alignItems: 'center'
+     alignItems: 'center',
+     color: 'black'
+     
      }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h1" gutterBottom  sx={{font:'Robot, san-serif', fontWeight: 'semi-bold'}}>
       Hi, I am Chaker Baloch 
       </Typography>
-      <Typography variant="h5" gutterBottom>
-      I am a full stack developer with experience both working<br /> in front end and back end projects. 
-      </Typography>
+      <div style={{textAlign:'center'}}>
+        <Typography variant="h5" gutterBottom sx={{maxWidth: '40em'}}>
+        A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product        </Typography>
+      </div>
     </Box>
   </div>
 
