@@ -17,25 +17,17 @@ import { CenterFocusStrong } from '@mui/icons-material';
 
 
 const pages = ['Home', 'About', 'Projects','Contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -45,42 +37,26 @@ function NavBar() {
         <Box sx={{flexGrow: 0}}>
           <Box sx={{flexGrow: 1, display: 'flex', alignItems: 'center'}}>
             <Tooltip>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 2 }}>
+              <IconButton sx={{ p: 2 }}>
               <Avatar alt="Chaker Baloch" src={chakerImage} />
               </IconButton>
-              
             </Tooltip>
-              <Tooltip>
-                <Typography variant="body1" textAlign="center">
-                  Chaker Baloch
+              <Tooltip title = "">
+                <Typography variant="body1" textAlign="center"
+                 sx={{
+                    flexGrow: 1,
+                    display: 'block',
+                    my: '2',
+                    fontSize: '20px',
+                    color: 'inherit'
+                }}>
+                  CHAKER BALOCH
                 </Typography>
               </Tooltip>
           </Box>
-            {/* <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
-          </Box>
+        </Box>
           
-           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}, justifyContent: 'flex-end' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}, justifyContent: 'flex-end' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -116,38 +92,21 @@ function NavBar() {
               ))}
             </Menu> 
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography> */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', paddingLeft:'33%' }}>
+            {pages.map((page, index) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block',
+                mx:2, // Add margin to all buttons except the first one
+                fontSize: '18px'
+               }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
-        
         </Toolbar>
       </Container>
     </AppBar>
