@@ -1,5 +1,6 @@
 import * as React from 'react';
 import chakerImage from '../Images/chaker_image.jpg';
+import image from '../Images/scattered-forcefields.svg';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,7 +17,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { Block } from '@mui/icons-material';
+import Stack from '@mui/material/Stack';
 
 
 
@@ -37,7 +38,14 @@ function NavBar() {
   };
 
   return (
-  <div style={{backgroundColor: '#E9E8E8', width: '100%', height: '100vh'}}>
+  <div style={{
+    width: '100%',
+    height: '100vh',
+    backgroundColor: '' ,
+    backgroundSize: 'cover', // Optional: Adjust this property as needed
+    backgroundPosition: 'center',
+  
+  }}>
     <AppBar position="static" sx={{backgroundColor:'#9747FF'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -130,14 +138,19 @@ function NavBar() {
      color: 'black'
      
      }}>
-      <Typography variant="h1" gutterBottom  sx={{font:'Robot, san-serif', fontWeight: 'semi-bold'}}>
-      Hi, I am Chaker Baloch 
+      <Typography variant="h1" gutterBottom  sx={{font:'Robot, san-serif', fontWeight: 'semi-bold', fontStyle:'initial'}}>
+      HEY, I AM CHAKER BALOCH 
       </Typography>
       <div style={{textAlign:'center'}}>
         <Typography variant="h5" gutterBottom sx={{maxWidth: '40em'}}>
-        A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product        </Typography>
+        A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product     </Typography>
       </div>
     </Box>
+
+    <Stack spacing={2} direction="row" sx={{flexGrow: 1,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+      <Button variant="contained" sx={{flexGrow: 0,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', backgroundColor:'#9747FF', fontSize:'18px' }} >Projects</Button>
+    </Stack>
+
   </div>
 
   );
