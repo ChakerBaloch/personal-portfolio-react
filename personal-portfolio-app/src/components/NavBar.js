@@ -46,7 +46,7 @@ function NavBar() {
     backgroundPosition: 'center',
   
   }}>
-    <AppBar position="static" sx={{backgroundColor:'#9747FF'}}>
+    <AppBar position="static" sx={{backgroundColor:'#9747FF', position:'sticky',top:'0',zIndex:'100'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <Box sx={{flexGrow: 0}}>
@@ -148,7 +148,7 @@ function NavBar() {
     </Box>
 
     <Stack spacing={2} direction="row" sx={{flexGrow: 1,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
-      <Button variant="contained" sx={{flexGrow: 0,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', backgroundColor:'#9747FF', fontSize:'18px' }} >Projects</Button>
+      <Button variant="contained" sx={{flexGrow: 0,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', backgroundColor:'#9747FF', fontSize:'18px', zIndex:'50'}} >Projects</Button>
     </Stack>
 
   </div>

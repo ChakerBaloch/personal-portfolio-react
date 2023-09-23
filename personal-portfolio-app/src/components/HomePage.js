@@ -24,13 +24,24 @@ const HomePage = () => {
   return (
     <div>
       <NavBar />
-      <div className='cards-container' style={{ display: 'flex', flexDirection: 'column' }}>
-        {cardRows.map((row, rowIndex) => (
-          <div key={rowIndex} className='card-row' style={{ display: 'flex', flexDirection: 'row' }}>
-            {row}
-          </div>
-        ))}
-      </div>
+      <div className='cards-container' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin:'0.1rem' }}>
+  {cardRows.map((row, rowIndex) => (
+    <div key={rowIndex} className='card-row' style={{ display: 'flex', flexDirection: 'row' }}>
+      {row.map((card, cardIndex) => (
+        <div key={cardIndex} className='card' style={{ margin: '1rem' }}>
+          {card}
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
+
+
+
+
+
+
+
     </div>
   );
 }
