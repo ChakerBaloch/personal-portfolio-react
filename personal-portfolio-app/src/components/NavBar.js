@@ -148,7 +148,7 @@ function NavBar() {
     </Box>
 
     <Stack spacing={2} direction="row" sx={{flexGrow: 1,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
-      <Button variant="contained" sx={{flexGrow: 0,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', backgroundColor:'#9747FF', fontSize:'18px', zIndex:'50'}} >Projects</Button>
+      <Button variant="contained" sx={{flexGrow: 0,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', backgroundColor:'#9747FF', fontSize:'20px', zIndex:'50',width:'17rem', height: '4rem'}} >Projects</Button>
     </Stack>
 
   </div>

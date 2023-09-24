@@ -8,7 +8,22 @@ import testImage from '../Images/testCard.jpg';
 
 function MultiActionAreaCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+    sx={{
+      maxWidth: 310,
+      p: 0,
+      borderRadius: 2,
+      bgcolor: 'background.default',
+      //display: 'grid',
+      //gridTemplateColumns: { md: '0.5fr 0.5fr' },
+      //gap: 1,
+      transition: 'box-shadow 0.5s, transform 0.5s ease-out', // Add transitions for box-shadow and transform
+      '&:hover': {
+        boxShadow: '0 8px 16px rgba(0, 0, 0, 0.5)', // Adjust the shadow for hover
+        transform: 'scale(1.05)', // Apply a scaling effect on hover
+      },
+    }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
