@@ -1,0 +1,15 @@
+/* Add this CSS to your component or a global stylesheet */
+body {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+  }
+  
+  .custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    /* Add any other styles you want for your sticky navbar */
+  }
+  
+  

@@ -23,7 +23,7 @@ import Stack from '@mui/material/Stack';
 
 
 
-const pages = ['Home', 'About', 'Projects','Contact'];
+const pages = ['About', 'Projects','Contact'];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -46,13 +46,13 @@ function NavBar() {
     backgroundPosition: 'center',
   
   }}>
-    <AppBar position="static" sx={{backgroundColor:'#9747FF', position:'sticky',top:'0',zIndex:'100'}}>
+    <AppBar position="static" sx={{backgroundColor:'white', position:'sticky',top:'0',zIndex:'100',}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <Box sx={{flexGrow: 0}}>
           <Box sx={{flexGrow: 1, display: 'flex', alignItems: 'center'}}>
             <Tooltip>
-              <IconButton sx={{ p: 2 }}>
+              <IconButton sx={{ p: 1 }}>
               <Avatar alt="Chaker Baloch" src={chakerImage} />
               </IconButton>
             </Tooltip>
@@ -62,10 +62,10 @@ function NavBar() {
                     flexGrow: 1,
                     my: '2',
                     fontSize: '20px',
-                    color: 'inherit',
+                    color: 'black',
                     whiteSpace: 'nowrap'
                 }}>
-                  CHAKER BALOCH
+                  Chaker Baloch
                 </Typography>
               </Tooltip>
           </Box>
@@ -113,9 +113,10 @@ function NavBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block',
+                sx={{ my: 1, color: 'lightgray', display: 'block',
                 mx:2, // Add margin to all buttons except the first one
-                fontSize: '18px'
+                fontSize: '18px',
+                textTransform: 'none'
                }}
               >
                 {page}
@@ -126,7 +127,7 @@ function NavBar() {
       </Container>
     </AppBar>
     
-    {/* Text contetns */}
+   
     <Box sx={{ width: '100%',
      flexGrow: 1,
      my: 20,
@@ -147,9 +148,11 @@ function NavBar() {
       </div>
     </Box>
 
-    <Stack spacing={2} direction="row" sx={{flexGrow: 1,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+
+
+    {/* <Stack spacing={2} direction="row" sx={{flexGrow: 1,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
       <Button variant="contained" sx={{flexGrow: 0,display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center', backgroundColor:'#9747FF', fontSize:'20px', zIndex:'50',width:'17rem', height: '4rem'}} >Projects</Button>
-    </Stack>
+    </Stack> */}
 
   </div>
 

@@ -10,8 +10,8 @@ function MultiActionAreaCard() {
   return (
     <Card
     sx={{
-      maxWidth: 310,
-      p: 0,
+      maxWidth: 350,
+      p: 2,
       borderRadius: 2,
       bgcolor: 'background.default',
       //display: 'grid',
@@ -27,7 +27,7 @@ function MultiActionAreaCard() {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="110"
           src={testImage}
           alt="green iguana"
         />
