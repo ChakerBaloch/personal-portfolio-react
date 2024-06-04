@@ -1,12 +1,8 @@
-
 import React from 'react';
 import NavBar from '../components/NavBar';
-import Projects from '../components/Projects';
-import Hidden from '@mui/material/Hidden';
-
-
 import { MultiActionAreaCard } from '../components/Projects';
-
+import 'css-doodle';
+import '../CSS/Homepage.css';
 
 const HomePage = () => {
   const cardCount = 6; // Number of cards you want
@@ -23,28 +19,30 @@ const HomePage = () => {
   }
 
   return (
-    <div>
+    <div className="home-page-container">
+      <css-doodle use="var(--rules)" className="css-doodle-bg" />
       <NavBar />
-      <div className='cards-container' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin:'0.1rem'}}>
-  {cardRows.map((row, rowIndex) => (
-    <div key={rowIndex} className='card-row' style={{ display: 'flex', flexDirection: 'row' }}>
-      {row.map((card, cardIndex) => (
-        <div key={cardIndex} className='card' style={{ margin: '1rem'}}>
-          {card}
+      <div className="intro-container">
+        <div className="intro-text">
+          <h1>HEY, I AM CHAKER BALOCH</h1>
+          <p>A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product</p>
         </div>
-      ))}
-    </div>
-  ))}
-</div>
-
-
-
-
-
-
-
+      </div>
+      <div className="content-container">
+        <div className='cards-container'>
+          {cardRows.map((row, rowIndex) => (
+            <div key={rowIndex} className='card-row'>
+              {row.map((card, cardIndex) => (
+                <div key={cardIndex} className='card'>
+                  {card}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default HomePage;

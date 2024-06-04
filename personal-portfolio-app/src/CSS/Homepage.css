@@ -1,0 +1,124 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.home-page-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 1; /* Ensuring content is above the doodle */
+}
+
+.css-doodle-bg {
+  position: fixed; /* Fixed positioning to stay in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensuring the doodle stays in the background */
+  pointer-events: none; /* Ensuring no interaction with the doodle */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.intro-container {
+  position: relative;
+  z-index: 2; /* Ensure intro is above the doodle */
+  margin-top: 4rem; /* Adjust to push the intro text below the navbar */
+  padding-top: 2rem;
+  text-align: center;
+  color: black; /* Ensure text color contrasts with background */
+}
+
+.intro-text {
+  margin: 33vh auto;
+  max-width: 800px;
+}
+
+.content-container {
+  padding-top: 5rem; /* Adjust this value as needed to ensure content doesn't overlap with navbar */
+  padding-bottom: 2rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.1rem;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  margin: 1rem;
+  z-index: 3; /* Ensure cards are above the doodle */
+}
+
+css-doodle {
+  position: absolute; /* Ensure doodle does not push content */
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  --rules: (
+    :doodle {
+      @grid: 10 / 100vw 100vh;
+      --cg: @p(90, 180, 360);
+      --c1: hsl(@r($cg), @r(10%, 60%), @r(60%, 80%));
+      --c2: hsl(@r($cg), @r(10%, 60%), @r(60%, 80%));
+      --c3: hsl(@r($cg), @r(10%, 60%), @r(60%, 80%));
+      background: linear-gradient(@r(360)deg, @var(--c1), @var(--c2), @var(--c3));
+    }
+    :container {
+      mix-blend-mode: overlay;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    background: @p(@var(--c1), @var(--c2), @var(--c3));
+    border-radius: 50%;
+    position: absolute;
+    left: @r(100%);
+    top: @r(100%);
+    will-change: transform;
+    @odd {
+      filter: blur(@r(8px, 20px));
+      @size: @r(25vmin, 30vmin);
+      opacity: @r(.1, .4);
+      animation: drift @r(30s, 120s) infinite linear;
+      z-index: 0;
+    }
+    @even {
+      filter: blur(@r(0, 8px));
+      @size: @r(5vmin, 15vmin);
+      opacity: @r(.2, .6);
+      animation: drift @r(60s, 90s) infinite linear;
+      z-index: 10;
+    }
+    --ps1: @r(-10vmin, 10vmin);
+    --ps2: @r(-10vmin, 10vmin);
+    --pe1: @r(-10vmin, 10vmin);
+    --pe2: @r(-10vmin, 10vmin);
+    @keyframes drift {
+      0%, 100% {
+        transform: translate(@var(--ps1), @var(--ps2));
+      }
+      50% {
+        transform: translate(@var(--pe1), @var(--pe2));
+      }
+    }
+  );
+}
